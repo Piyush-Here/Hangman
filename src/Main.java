@@ -17,14 +17,14 @@ public class Main {
                             |
                             |
                             |
-                            ●
+                            O
                """;
         String secondWrongGuess = """
                 -------------------------
                             |
                             |
                             |
-                            ●
+                            O
                             .
                             .
                             .
@@ -36,7 +36,7 @@ public class Main {
                             |
                             |
                             |
-                            ●
+                            O
                             .
                           / .
                          /  .
@@ -48,7 +48,7 @@ public class Main {
                             |
                             |
                             |
-                            ●
+                            O
                             .
                           / . \\
                          /  .  \\
@@ -60,7 +60,7 @@ public class Main {
                             |
                             |
                             |
-                            ●
+                            O
                             .
                           / . \\
                          /  .  \\
@@ -75,7 +75,7 @@ public class Main {
                             |
                             |
                             |
-                            ●
+                            O
                             .
                           / . \\
                          /  .  \\
@@ -88,6 +88,7 @@ public class Main {
         String word,gameStatus="Began",guessedWord;
         Random rng = new Random();
         ArrayList<String> wordList=new ArrayList<>();
+        ArrayList<Character> guessedLetters = new ArrayList<>();
         int wordLength,NumOfLines=0,choice,chances=6;
         char guessedLetter;
 
@@ -129,23 +130,27 @@ public class Main {
                         System.out.print("Enter letter :  ");
                         guessedLetter=s.nextLine().charAt(0);
                         if(word.contains(Character.toString(guessedLetter))){
+                            
                             for(int i=0;i<wordLength;i++){
                                 if(word.charAt(i)==guessedLetter){
-                                    System.out.print(guessedLetter);
+                                    guessedLetters.add(guessedLetter);
+                                }
+                                if(guessedLetters.contains(word.charAt(i))){
+                                    System.out.print(word.charAt(i));
                                 }else{
                                     System.out.print("_");
                                 }
                             }
                         }else{
                             switch(chances--){
-                                case 6 ->System.out.println(firstWrongGuess);
+                                case 6 -> System.out.println(firstWrongGuess);
                                 case 5 -> System.out.println(secondWrongGuess);
                                 case 4 -> System.out.println(thirdWrongGuess);
                                 case 3 -> System.out.println(fourthWrongGuess);
                                 case 2 -> System.out.println(fifthWrongGuess);
                                 case 1 -> {
                                     System.out.println(sixthWrongGuess);
-                                    System.out.println("YOU LOOSE!");
+                                    System.out.println("YOU LOOSE! the word was "+word);
                                     gameStatus="Finished";
                                 }
                             }
@@ -159,14 +164,14 @@ public class Main {
                             System.out.println("YOU WIN!");
                         }else {
                             switch(chances--){
-                                case 6 ->System.out.println(firstWrongGuess);
+                                case 6 -> System.out.println(firstWrongGuess);
                                 case 5 -> System.out.println(secondWrongGuess);
                                 case 4 -> System.out.println(thirdWrongGuess);
                                 case 3 -> System.out.println(fourthWrongGuess);
                                 case 2 -> System.out.println(fifthWrongGuess);
                                 case 1 -> {
                                     System.out.println(sixthWrongGuess);
-                                    System.out.println("YOU LOOSE!");
+                                    System.out.println("YOU LOOSE! the word was "+word);
                                     gameStatus="Finished";
                                 }
                         }
