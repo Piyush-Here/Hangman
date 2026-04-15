@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎮 Hangman Multiplayer (Java Terminal) — v1
 
 A turn-based multiplayer Hangman built on top of the original single-player version.
@@ -429,4 +428,3 @@ If you liked this project:
 ---
 
 > "Every wrong guess gets you closer to the truth." 🎯
->>>>>>> 5f7b9ec52a7991db056ddd6ca3783fd902a20198
