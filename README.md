@@ -4,6 +4,15 @@
 
 A terminal Hangman game written in plain Java 17 with no dependencies. A random word is picked from `Words.txt`; you have 6 wrong guesses to find it, and the hangman is drawn in ASCII as you miss.
 
+
+## Screenshots
+| | |
+|---|---|
+| ![Game start and first wrong guess](docs/screenshots/start.png)<br>**Start and first wrong guess** | ![Invalid menu input](docs/screenshots/invalid-input.png)<br>**Input validation** |
+| ![Correct letter revealed](docs/screenshots/good-guess.png)<br>**Correct guess** | ![Wrong guess draws the gallows](docs/screenshots/wrong-guess.png)<br>**Wrong guess** |
+| ![Wrong word guess](docs/screenshots/wrong-word.png)<br>**Wrong word guess costs a chance** | ![Game over screen](docs/screenshots/lose.png)<br>**You lose** |
+| ![Winning by guessing the word](docs/screenshots/win.png)<br>**You win** | |
+
 ## Run it
 
 Requires **JDK 17 or newer**. From the project folder:
